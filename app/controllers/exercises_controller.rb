@@ -1,8 +1,4 @@
 class ExercisesController < ApplicationController
-  def show
-    @exercise = Exercise.find(params[:id])
-  end
-
   def new
     @user = User.find(params[:user_id])
     @exercise = @user.exercises.new
