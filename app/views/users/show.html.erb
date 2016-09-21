@@ -1,6 +1,19 @@
-<%= link_to 'Add Food :D', new_user_food_path(@user), id: 'new_user_food_link', remote: true, method: 'get', class: 'btn btn-success' %>
-<%= link_to 'Add Exercise :D', new_user_exercise_path(@user), id: 'new_user_exercise_link', remote: true, method: 'get', class: 'btn btn-success' %>
+<div class="row">
+  <div class="col-xs-6">
+    <%= link_to 'Add Food :D', new_user_food_path(@user), id: 'new_user_food_link', remote: true, method: 'get', class: 'btn btn-success' %>
+    <div id="food_show">
+      <%= render "foods/show" %>
+    </div>
+  </div>
 
-<div id="food_show">
-<%= render "foods/show" %>
+  <div class="col-xs-6">
+    <%= link_to 'Add Exercise :D', new_user_exercise_path(@user), id: 'new_user_exercise_link', remote: true, method: 'get', class: 'btn btn-success' %>
+    <div id="exercise_show">
+      <%= render "exercises/show" %>
+    </div>
+  </div>
+</div>
+
+<div id="total_calories">
+  <%= render "total" %>
 </div>

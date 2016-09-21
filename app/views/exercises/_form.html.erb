@@ -1,4 +1,4 @@
-<%= form_for [@user, @exercise] do |f| %>
+<%= form_for [@user, @exercise], remote: true do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :calories %>

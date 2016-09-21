@@ -11,11 +11,10 @@ class ExercisesController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @exercise = @user.exercises.new(exercise_params)
-
     if @exercise.save
       flash[:notice] = 'Exercise Entry Created'
       respond_to do |format|
-        format.html { redirect_to new_user_exercise_path }
+        format.html { redirect_to user_path(@user) }
         format.js
       end
     else

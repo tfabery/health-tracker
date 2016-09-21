@@ -11,7 +11,6 @@ class FoodsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @food = @user.foods.new(food_params)
-
     if @food.save
       flash[:notice] = 'Food Entry Created'
       respond_to do |format|
