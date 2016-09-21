@@ -9,6 +9,32 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar" role="navigation">
+      <div class ='container'>
+        <div class="navbar-header">
+          <%= link_to "Tony's Personal Health Tracker :)", root_path %>
+        </div>
+        <div class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            Logged in as <%= current_user.email %> |
+            <%= link_to "View Profile", user_path(current_user.id) %> |
+            <%= link_to "Edit Profile", edit_user_registration_path %> |
+            <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "Sign In", new_user_session_path %> |
+            <%= link_to "Sign Up", new_user_registration_path, :method => "get" %></button>
+          <% end %>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <% flash.each do |key, value| %>
+        <div class="<%= flash_class(key) %>">
+          <%= value %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
