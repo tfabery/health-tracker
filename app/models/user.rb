@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :exercises, dependent: :destroy
 
   def food_calories
-    total = 0;
+    total = 0
     self.foods.each do |food|
       total += food.calories
     end
@@ -16,7 +16,7 @@ class User < ApplicationRecord
   end
 
   def exercise_calories
-    total = 0;
+    total = 0
     self.exercises.each do |exercise|
       total += exercise.calories
     end

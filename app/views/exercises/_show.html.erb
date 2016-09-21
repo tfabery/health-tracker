@@ -1,5 +1,7 @@
 <% if @user.exercises.any? %>
-  <% @user.exercises.each do |exercise| %>
+  <%= sortable "name", "Sort By Name", "exercise" %>
+  <%= sortable "calories", "Sort By Calories", "exercise" %>
+  <% @exercises.each do |exercise| %>
     <p><%= exercise.name %>: <%= exercise.calories %></p>
   <% end %>
 <% end %>

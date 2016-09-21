@@ -10,15 +10,17 @@ class ExercisesController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
+    @exercises = @user.exercises
     @exercise = @user.exercises.new(exercise_params)
     if @exercise.save
-      flash[:notice] = 'Exercise Entry Created'
+      flash[:success] = 'Exercise Entry Created'
       respond_to do |format|
         format.html { redirect_to user_path(@user) }
         format.js
       end
     else
-      render :new
+      flash[:error] = 'Exercise Unable To Be Saved'
+      redirect_to user_path(@user)
     end
   end
 

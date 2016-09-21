@@ -1,3 +1,7 @@
+<div id="flash">
+  <%= render 'layouts/flash' %>
+</div>
+
 <div class="row">
   <div class="col-xs-6">
     <%= link_to 'Add Food :D', new_user_food_path(@user), id: 'new_user_food_link', remote: true, method: 'get', class: 'btn btn-success' %>

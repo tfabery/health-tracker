@@ -10,15 +10,17 @@ class FoodsController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
+    @foods = @user.foods
     @food = @user.foods.new(food_params)
     if @food.save
-      flash[:notice] = 'Food Entry Created'
+      flash[:success] = 'Food Entry Created'
       respond_to do |format|
         format.html { redirect_to user_path(@user) }
         format.js
       end
     else
-      render :new
+      flash[:error] = 'Food Unable To Be Saved'
+      redirect_to user_path(@user)
     end
   end
 

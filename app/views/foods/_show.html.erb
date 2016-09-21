@@ -1,5 +1,7 @@
 <% if @user.foods.any? %>
-  <% @user.foods.each do |food| %>
+  <%= sortable "name", "Sort By Name", "food" %>
+  <%= sortable "calories", "Sort By Calories", "food" %>
+  <% @foods.each do |food| %>
     <p><%= food.name %>: <%= food.calories %></p>
   <% end %>
 <% end %>
