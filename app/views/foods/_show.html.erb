@@ -1,9 +1,10 @@
 <% if @user.foods.any? %>
-  <%= sortable "name", "Sort By Name", "food" %>
-  <%= sortable "calories", "Sort By Calories", "food" %>
+  <%= sortable "name", "Sort By Name", "food", @user %>
+  <%= sortable "calories", "Sort By Calories", "food", @user %>
   <% @foods.each do |food| %>
     <p><%= food.name %>: <%= food.calories %></p>
   <% end %>
+  <%= will_paginate @foods, :param_name => 'food_paginate' %>
 <% end %>
 
 <p>Total: <%= @user.food_calories %> calories consumed</p>
