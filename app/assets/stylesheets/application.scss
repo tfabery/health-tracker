@@ -15,3 +15,19 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+#index-title {
+  text-align: center;
+  font-size: 5em;
+  font-family: 'Faster One', cursive;
+}
+
+#homelink {
+  color: hotpink;
+  font-size: 2em;
+  font-family: 'Faster One', cursive;
+}
+
+#user-index {
+  text-align: center;
+}

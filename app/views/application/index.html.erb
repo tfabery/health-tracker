@@ -1,2 +1,67 @@
 <%= render 'layouts/flash' %>
-<h1>You can do it!</h1>
+
+<h1 id="index-title">Cannon Beach Body</h1>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <%= image_tag 'cannon-beach-body.jpg' %>
+    </div>
+
+    <div class="item">
+      <%= image_tag 'cannon-beach-biker.jpg' %>
+    </div>
+
+    <div class="item">
+      <%= image_tag 'cannon-beach-yoga.jpg' %>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+
+<% if current_user %>
+  <div id="user-index">
+    <div class="row">
+      <div class="col-xs-4">
+        <h3>Get the svelte and taut Cannon Beach Body you've always dreamed of</h3>
+      </div>
+      <div class="col-xs-4">
+        <h3>Track your calories from food and set intake limits</h3>
+      </div>
+      <div class="col-xs-4">
+        <h3>Track calories burned through exercise and set fitness goals</h3>
+      </div>
+    </div>
+    <h3>Welcome, <%= current_user.email %></h3>
+    <h3><%= link_to "Go to your Dashboard", user_path(current_user), class:"btn btn-success" %></h3>
+  </div>
+<% else %>
+  <div class="row">
+    <div class="col-xs-6">
+      <h3>Want to get Started?</h3>
+      <h3><%= link_to "SIGN UP NOW!", new_user_registration_path %></h3>
+    </div>
+    <div class="col-xs-6">
+      <h3>Already a member?</h3>
+      <h3><%= link_to "Sign in here!", new_user_session_path %></h3>
+    </div>
+  </div>
+<% end %>

@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HealthTracker</title>
+    <title>Cannon Beach Body</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
   </head>
 
   <body>
     <nav class="navbar" role="navigation">
       <div class ='container'>
         <div class="navbar-header">
-          <%= link_to "Tony's Personal Health Tracker :)", root_path %>
+          <%= link_to "CBB", root_path, id:"homelink" %>
         </div>
         <div class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
