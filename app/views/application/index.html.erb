@@ -50,7 +50,7 @@
 
 <% if current_user %>
     <h3>Welcome, <%= current_user.email %></h3>
-    <h3><%= link_to "Go to your Dashboard", user_path(current_user), class:"btn btn-success" %></h3>
+    <h3><%= link_to "Go to your Dashboard", user_path(current_user), class:"btn btn-primary" %></h3>
   </div>
 <% else %>
   <div class="row">

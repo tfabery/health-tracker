@@ -4,7 +4,7 @@
   <% @exercises.each do |exercise| %>
     <p><%= exercise.name %>: <%= exercise.calories %></p>
   <% end %>
-  <%= will_paginate @exercises, :param_name => 'exercise_paginate' %>
+  <%= will_paginate @exercises, :params => { :controller => 'users', :action => 'show', :id => @user.id }, :param_name => 'exercise_paginate' %>
+  <h4>Total: <%= @user.exercise_calories %> calories burned</h4>
+  <hr>
 <% end %>
-
-<p>Total: <%= @user.exercise_calories %> calories burned</p>

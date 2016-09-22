@@ -1,5 +1,6 @@
 $('form').remove();
 $('#new_user_exercise_link').show();
 $('#exercise_show').html('<%= j render "show" %>');
+$('#chart_row').html('<%= j render "users/charts" %>')
 $('#total_calories').html('<%= j render "users/total" %>')
 $('#flash').html('<%= j render "layouts/flash" %>')

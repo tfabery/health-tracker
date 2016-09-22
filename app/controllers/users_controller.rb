@@ -6,7 +6,6 @@ class UsersController < ApplicationController
     else
       @exercises = @user.exercises.paginate(:page => params[:exercise_paginate], :per_page => 5)
     end
-
     if params[:food_sort] && params[:direction] || params[:search]
       @foods = @user.foods.order(params[:food_sort] + " " + params[:direction]).paginate(:page => params[:food_paginate], :per_page => 5)
     else

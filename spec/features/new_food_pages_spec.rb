@@ -7,7 +7,7 @@ describe "the new food creating process" do
     fill_in 'Email', :with => 'tfabery@gmail.com'
     fill_in 'Password', :with => 'ilovenike'
     click_button 'Log in'
-    click_link 'Add Food :D'
+    click_link 'Add Food'
     fill_in 'Name', :with => 'Toast'
     fill_in 'Calories', :with => '5'
     click_button 'Create Food'
@@ -20,7 +20,7 @@ describe "the new food creating process" do
     fill_in 'Email', :with => 'tfabery@gmail.com'
     fill_in 'Password', :with => 'ilovenike'
     click_button 'Log in'
-    click_link 'Add Food :D'
+    click_link 'Add Food'
     click_button 'Create Food'
     expect(page).to have_content 'Food Unable To Be Saved'
   end

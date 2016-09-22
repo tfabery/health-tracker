@@ -4,7 +4,7 @@
   <% @foods.each do |food| %>
     <p><%= food.name %>: <%= food.calories %></p>
   <% end %>
-  <%= will_paginate @foods, :param_name => 'food_paginate' %>
+  <%= will_paginate @foods, :params => { :controller => 'users', :action => 'show', :id => @user.id }, :param_name => 'food_paginate' %>
+  <h4>Total: <%= @user.food_calories %> calories consumed</h4>
+  <hr>
 <% end %>
-
-<p>Total: <%= @user.food_calories %> calories consumed</p>

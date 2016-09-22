@@ -6,7 +6,8 @@ class FoodsController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    @foods = @user.foods
+    @foods = @user.foods.paginate(:page => params[:food_paginate], :per_page => 5)
+    @exercises = @user.exercises.paginate(:page => params[:exercise_paginate], :per_page => 5)
     @food = @user.foods.new(food_params)
     if @food.save
       flash[:success] = 'Food Entry Created'

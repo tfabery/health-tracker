@@ -1,0 +1,9 @@
+<div id="food-charts" class="col-xs-6">
+  <%= pie_chart @user.foods.group(:name).count %>
+  <%= bar_chart @user.foods.group(:name).sum(:calories) %>
+</div>
+
+<div id="exercise-charts" class="col-xs-6">
+  <%= pie_chart @user.exercises.group(:name).count %>
+  <%= bar_chart @user.exercises.group(:name).sum(:calories) %>
+</div>

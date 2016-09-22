@@ -7,7 +7,7 @@ describe "the new exercise creating process" do
     fill_in 'Email', :with => 'tfabery@gmail.com'
     fill_in 'Password', :with => 'ilovenike'
     click_button 'Log in'
-    click_link 'Add Exercise :D'
+    click_link 'Add Exercise'
     fill_in 'Name', :with => 'Running'
     fill_in 'Calories', :with => '50'
     click_button 'Create Exercise'
@@ -20,7 +20,7 @@ describe "the new exercise creating process" do
     fill_in 'Email', :with => 'tfabery@gmail.com'
     fill_in 'Password', :with => 'ilovenike'
     click_button 'Log in'
-    click_link 'Add Exercise :D'
+    click_link 'Add Exercise'
     click_button 'Create Exercise'
     expect(page).to have_content 'Exercise Unable To Be Saved'
   end

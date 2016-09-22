@@ -13,16 +13,4 @@ module ApplicationHelper
     direction = column == params[:' + type + '_sort] && params[:direction] == "asc" ? "desc" : "asc"
     link_to title, user_path(user, :' + type + '_sort => column, :direction => direction)'
   end
-  #
-  # def exercise_sortable(column, title = nil, user)
-  #   title ||= column.titleize
-  #   direction = column == params[:exercise_sort] && params[:direction] == "asc" ? "desc" : "asc"
-  #   link_to title, user_path(user, :exercise_sort => column, :direction => direction)
-  # end
-  #
-  # def food_sortable(column, title = nil)
-  #   title ||= column.titleize
-  #   direction = column == params[:food_sort] && params[:direction] == "asc" ? "desc" : "asc"
-  #   link_to title, :food_sort => column, :direction => direction
-  # end
 end
