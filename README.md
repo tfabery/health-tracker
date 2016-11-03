@@ -1,24 +1,38 @@
-# README
+# HTracker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### By Leah Nelson, Tony Fabery
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+An application that allows users to track calories.
 
-* System dependencies
+## Features
 
-* Configuration
+* User authentication
+* Input calories consumed through food
+* Input calories burned through exercise
+* Displays net calories
+* Generate Chartkick charts
 
-* Database creation
+## Technologies Used
+* HTML
+* Sass
+* Bootstrap
+* AJAX
+* Ruby
+* Rails
 
-* Database initialization
+## Setup/Installation Requirements
+* `git clone <repository-url>` this repository
+* change into the new directory
+* `rake:db:migrate db:test:prepare`
+* `rails s`
+* [http://localhost:3000](http://localhost:3000)
 
-* How to run the test suite
+## Contact
 
-* Services (job queues, cache servers, search engines, etc.)
+Email: leahcnels@gmail.com, tfabery@gmail.com
 
-* Deployment instructions
+## License
 
-* ...
+This software is licensed under the MIT License
