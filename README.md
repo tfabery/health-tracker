@@ -1,4 +1,4 @@
-# HTracker
+# Cannon Beach Body
 
 #### By Leah Nelson, Tony Fabery
 
